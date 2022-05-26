@@ -97,7 +97,7 @@ func Handle(ctx context.Context, res http.ResponseWriter, req *http.Request) {
 	score := GameScore{
 		Player:     answers.Player,
 		SessionId:  answers.SessionId,
-		Level:      "devoxxuk-question-1",
+		Level:      "springio-question-1",
 		LevelScore: points,
 		Time:       time.Now(),
 	}
@@ -133,7 +133,7 @@ func emitCloudEvent(gs []byte) error {
 	newUUID, _ := uuid.NewUUID()
 	event.SetID(newUUID.String())
 	event.SetTime(time.Now())
-	event.SetSource("devoxxuk-question-1")
+	event.SetSource("springio-question-1")
 	event.SetType("GameScoreEvent")
 	event.SetData(cloudevents.ApplicationJSON, gs)
 
